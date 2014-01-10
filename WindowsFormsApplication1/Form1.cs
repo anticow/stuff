@@ -13,6 +13,20 @@ namespace WindowsFormsApplication1
 {
     public partial class mainForm : Form
     {
+        public class folderObj
+        {
+            public string Folder { get; set; }
+            public string Folderparent { get; set; }
+            public string Fullpath { get; set; }
+
+            public folderObj(string folder, string folderparent, string fullpath)
+            {
+                Folder = folder;
+                Folderparent = folderparent;
+                Fullpath = fullpath;
+
+            }
+        }
         public mainForm()
         {
             InitializeComponent();
@@ -21,7 +35,7 @@ namespace WindowsFormsApplication1
 
         private void mainForm_Load_1(object sender, EventArgs e)
         {
-
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,11 +55,31 @@ namespace WindowsFormsApplication1
                 string foldername = folder.SelectedPath;
                 foreach (string f in Directory.GetFiles(foldername)) this.listBox1.Items.Add(f);  
                 listBox2.Items.Add(foldername);
+                Object foldername_object = new Object();
+                foldername_object = foldername;
+                
             }
         }
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
         {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void folderdig(object sender, EventArgs e)
+        {
+            //collect all of the subdirectory information
+            //if ( ) {};
+
+            //do stuff, develop the path for the target directory
+
+            //collect all of the direct files in the current sub directory
+
+            //do stuff, see how many files there are, if blank move on to the next up and create the new end path for the function
 
         }
     }
